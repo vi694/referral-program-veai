@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veai — Идеи на будущее</title>
+<style>
+  :root {
+    --veai-purple: #7B5BFF;
+    --veai-purple-dark: #5B3FD6;
+    --veai-bg: #0E0B1A;
+    --veai-card: #1A1530;
+    --veai-card-2: #221B3D;
+    --veai-text: #EDEAF7;
+    --veai-muted: #9B95B8;
+    --veai-green: #34D399;
+    --veai-gold: #FFC857;
+    --veai-border: #2E2750;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Inter, sans-serif;
+    background: radial-gradient(1200px 600px at 80% -10%, #2A1F55 0%, var(--veai-bg) 55%);
+    color: var(--veai-text);
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .brand .logo {
+    width: 36px; height: 36px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--veai-purple), var(--veai-purple-dark));
+    display: grid; place-items: center; font-weight: 800; color: #fff;
+  }
+  .brand b { font-size: 20px; letter-spacing: .3px; }
+  .ribbon {
+    display: inline-block; background: rgba(255,200,87,.15); color: var(--veai-gold);
+    font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px;
+  }
+  h1 { font-size: 30px; margin-bottom: 8px; }
+  .lead { color: var(--veai-muted); margin-bottom: 28px; font-size: 15px; }
+  .card {
+    background: var(--veai-card); border: 1px solid var(--veai-border);
+    border-radius: 18px; padding: 24px; margin-bottom: 20px;
+  }
+  .card h2 { font-size: 17px; margin-bottom: 16px; }
+  .ach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .ach {
+    background: var(--veai-card-2); border: 1px solid var(--veai-border);
+    border-radius: 14px; padding: 18px; text-align: center; position: relative;
+  }
+  .ach.locked { opacity: .55; }
+  .ach .medal { font-size: 30px; margin-bottom: 8px; }
+  .ach .goal { font-size: 14px; font-weight: 600; }
+  .ach .prize { font-size: 13px; color: var(--veai-purple); font-weight: 700; margin-top: 4px; }
+  .ach .state { font-size: 11px; color: var(--veai-muted); margin-top: 8px; }
+  .ach .state.done { color: var(--veai-green); }
+  .progress { height: 6px; background: var(--veai-bg); border-radius: 999px; margin-top: 10px; overflow: hidden; }
+  .progress > span { display: block; height: 100%; background: var(--veai-purple); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .feature { background: var(--veai-card-2); border: 1px solid var(--veai-border); border-radius: 14px; padding: 20px; }
+  .feature .icon { font-size: 26px; margin-bottom: 10px; }
+  .feature h3 { font-size: 15px; margin-bottom: 8px; }
+  .feature p { font-size: 13px; color: var(--veai-muted); line-height: 1.5; }
+  .feature .q { font-size: 12px; color: var(--veai-gold); margin-top: 10px; }
+  .btn {
+    background: linear-gradient(135deg, var(--veai-purple), var(--veai-purple-dark));
+    color: #fff; border: none; border-radius: 12px; padding: 13px 22px;
+    font-size: 14px; font-weight: 600; cursor: pointer; margin-top: 14px;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .note { font-size: 12px; color: var(--veai-muted); margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><div class="logo">V</div><b>Veai</b></div>
+
+  <span class="ribbon">Идеи на будущее · мокап, не в разработке</span>
+  <h1>Развитие реферальной программы</h1>
+  <p class="lead">Концепты следующих этапов: ачивки, минуты за отзывы и программа амбассадоров.</p>
+
+  <div class="card">
+    <h2>🏆 Ачивки за приглашения</h2>
+    <div class="ach-grid">
+      <div class="ach">
+        <div class="medal">🥉</div>
+        <div class="goal">5 друзей</div>
+        <div class="prize">+500 минут</div>
+        <div class="state done">Получено</div>
+        <div class="progress"><span style="width:100%"></span></div>
+      </div>
+      <div class="ach">
+        <div class="medal">🥈</div>
+        <div class="goal">10 друзей</div>
+        <div class="prize">+1000 минут</div>
+        <div class="state">5 из 10</div>
+        <div class="progress"><span style="width:50%"></span></div>
+      </div>
+      <div class="ach locked">
+        <div class="medal">🥇</div>
+        <div class="goal">25 друзей</div>
+        <div class="prize">+5000 минут</div>
+        <div class="state">5 из 25</div>
+        <div class="progress"><span style="width:20%"></span></div>
+      </div>
+    </div>
+    <p class="note">Награды растут по нарастающей: 5 → 500, 10 → 1000, 25 → 5000 минут и далее.</p>
+  </div>
+
+  <div class="row">
+    <div class="feature">
+      <div class="icon">⭐</div>
+      <h3>Минуты за отзывы</h3>
+      <p>Начисляем минуты за отзыв о Veai. Чем подробнее отзыв — тем выше бонус.</p>
+      <p class="q">Открытый вопрос: где собирать отзывы — JetBrains Marketplace или другая площадка?</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🎤</div>
+      <h3>Программа амбассадоров</h3>
+      <p>Оставьте заявку — с вами свяжется отдел маркетинга и расскажет про условия программы.</p>
+      <button class="btn">Стать амбассадором Veai</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
