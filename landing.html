@@ -263,6 +263,18 @@
     .idea{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:28px}
     .idea .h{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:8px}
     .idea p{font-size:15px;color:var(--mist);line-height:1.5}
+    /* badges */
+    .badges{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:28px;margin-top:24px}
+    .badges .b-head{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:6px}
+    .badges .b-sub{font-size:15px;color:var(--mist);line-height:1.5;margin-bottom:20px}
+    .badge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .badge{background:var(--void);border:1px solid var(--hairline);border-radius:19px;padding:20px;text-align:center}
+    .badge .ic{font-size:30px;line-height:1;margin-bottom:10px}
+    .badge .nm{font-family:var(--font-geist);font-size:14px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:var(--bone)}
+    .badge .req{font-size:13px;color:var(--fog);margin-top:4px;line-height:1.4}
+    .badge.legend{border-color:rgba(107,98,242,.4);background:linear-gradient(180deg,rgba(107,98,242,.1),var(--void))}
+    .badges .b-note{font-size:14px;color:var(--fog);margin-top:18px;line-height:1.5}
+    @media (max-width:900px){.badge-grid{grid-template-columns:1fr 1fr}}
 
     /* ---------- PRINCIPLES ---------- */
     .principles{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
@@ -484,7 +496,19 @@
 
       <div class="ideas-grid">
         <div class="idea"><div class="h">Минуты за отзывы</div><p>Бонус минутами за отзыв о Veai. Площадка уточняется — JetBrains Marketplace или другая.</p></div>
-        <div class="idea"><div class="h">Сезонные бейджи</div><p>За каждую взятую ачивку — значок в профиле и статус в сообществе.</p></div>
+        <div class="idea"><div class="h">Реферальный лидерборд</div><p>Публичный рейтинг по числу приглашённых друзей с подпиской.</p></div>
+      </div>
+
+      <div class="badges">
+        <div class="b-head">Сезонные бейджи</div>
+        <div class="b-sub">За каждую взятую ачивку — значок в профиле и статус в сообществе. Чем больше друзей привёл — тем редче значок.</div>
+        <div class="badge-grid">
+          <div class="badge"><div class="ic">🥉</div><div class="nm">Бронза</div><div class="req">5 друзей</div></div>
+          <div class="badge"><div class="ic">🥈</div><div class="nm">Серебро</div><div class="req">10 друзей</div></div>
+          <div class="badge"><div class="ic">🥇</div><div class="nm">Золото</div><div class="req">25 друзей</div></div>
+          <div class="badge legend"><div class="ic">💎</div><div class="nm">Легенда</div><div class="req">50+ друзей</div></div>
+        </div>
+        <div class="b-note">Бейджи обновляются по сезонам: редкие значки доступны только в свой период и остаются в профиле навсегда.</div>
       </div>
     </div>
   </section>
