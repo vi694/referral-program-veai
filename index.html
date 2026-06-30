@@ -226,6 +226,16 @@
     .nd-item p b{color:var(--bone);font-weight:500}
     @media (max-width:900px){.nd-grid{grid-template-columns:1fr}}
 
+    /* ---------- INVITE LADDER ---------- */
+    .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .rung{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:22px;position:relative}
+    .rung .step-k{font-family:var(--font-geist);font-size:14px;font-weight:600;line-height:1.14;letter-spacing:.4px;text-transform:uppercase;color:var(--fog);margin-bottom:10px}
+    .rung .step-v{font-family:var(--font-geist);font-size:24px;font-weight:500;line-height:1.33;color:var(--paper)}
+    .rung .step-d{font-size:14px;color:var(--mist);margin-top:6px;line-height:1.5}
+    .rung.peak{border-color:rgba(107,98,242,.4);background:linear-gradient(180deg,rgba(107,98,242,.1),var(--char))}
+    .invite-note{font-size:14px;color:var(--fog);margin-top:20px;letter-spacing:.35px}
+    @media (max-width:900px){.ladder{grid-template-columns:1fr}}
+
     /* ---------- REWARDS ---------- */
     .rewards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
     .reward{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:32px;position:relative;overflow:hidden}
@@ -346,14 +356,33 @@
         <div class="reward">
           <div class="who">За каждого друга</div>
           <div class="val">+30 минут</div>
-          <div class="desc">Минуты падают на баланс за каждого приглашённого, который начал пользоваться Veai.</div>
+          <div class="desc">Минуты падают на баланс за каждого приглашённого, который оформил первую подписку Veai — не за регистрацию.</div>
         </div>
         <div class="reward">
           <div class="who">На 10 друзей</div>
           <div class="val">−50% на Pro</div>
-          <div class="desc">Когда наберёте 10 приглашённых — скидка 50% на тариф Pro на 3 месяца.</div>
+          <div class="desc">Когда наберёте 10 приглашённых с первой подпиской — скидка 50% на тариф Pro на 3 месяца.</div>
         </div>
       </div>
+
+      <div class="ladder">
+        <div class="rung">
+          <div class="step-k">1 друг</div>
+          <div class="step-v">+30 минут</div>
+          <div class="step-d">Сразу после его первой подписки.</div>
+        </div>
+        <div class="rung">
+          <div class="step-k">5 друзей</div>
+          <div class="step-v">+150 минут</div>
+          <div class="step-d">По 30 минут за каждого — прогресс виден на полпути.</div>
+        </div>
+        <div class="rung peak">
+          <div class="step-k">10 друзей</div>
+          <div class="step-v">+300 минут и −50% Pro</div>
+          <div class="step-d">Минуты за всех плюс скидка на Pro на 3 месяца.</div>
+        </div>
+      </div>
+      <p class="invite-note">Минуты начисляются за первую оплаченную подписку друга, а не за регистрацию — это защищает программу от накрутки.</p>
     </div>
   </section>
 
