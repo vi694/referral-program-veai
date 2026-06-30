@@ -10,7 +10,7 @@
 | [`SPEC.md`](SPEC.md) | Полная спецификация механики: шаги, награды, защита от фрода, идеи на будущее |
 | [`PARTNER-PROGRAM-IDEAS.md`](PARTNER-PROGRAM-IDEAS.md) | Комиссионная модель для партнёров и амбассадоров (10/20/30/50% от лицензии) |
 | [`mockups/invite-friend.html`](mockups/invite-friend.html) | Мокап раздела «Пригласить друга»: реферальная ссылка, статистика, шаги |
-| [`mockups/future-achievements.html`](mockups/future-achievements.html) | Мокап будущих фич: ачивки, минуты за отзывы, программа амбассадоров |
+| [`mockups/future-achievements.html`](mockups/future-achievements.html) | Мокап будущих фич: многоуровневые награды, минуты за отзывы, программа амбассадоров |
 
 ## Суть механики
 
