@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Реферальная программа Veai — пригласи коллегу, получите бонус оба</title>
+<style>
+  :root {
+    --veai-purple: #7B5BFF;
+    --veai-purple-dark: #5B3FD6;
+    --veai-bg: #0E0B1A;
+    --veai-card: #1A1530;
+    --veai-card-2: #221B3D;
+    --veai-text: #EDEAF7;
+    --veai-muted: #9B95B8;
+    --veai-green: #34D399;
+    --veai-gold: #FFC857;
+    --veai-border: #2E2750;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, Inter, sans-serif;
+    background: var(--veai-bg);
+    color: var(--veai-text);
+    line-height: 1.5;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(14,11,26,.82); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--veai-border);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand .logo {
+    width: 34px; height: 34px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--veai-purple), var(--veai-purple-dark));
+    display: grid; place-items: center; font-weight: 800; color: #fff;
+  }
+  .brand b { font-size: 19px; letter-spacing: .3px; }
+  .btn {
+    background: linear-gradient(135deg, var(--veai-purple), var(--veai-purple-dark));
+    color: #fff; border: none; border-radius: 12px; padding: 13px 24px;
+    font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none;
+    display: inline-block;
+  }
+  .btn:hover { filter: brightness(1.08); }
+  .btn.ghost { background: transparent; border: 1px solid var(--veai-border); }
+
+  /* Hero */
+  .hero {
+    text-align: center; padding: 90px 0 70px;
+    background: radial-gradient(900px 480px at 50% -20%, #2A1F55 0%, transparent 60%);
+  }
+  .pill {
+    display: inline-block; background: rgba(123,91,255,.15); color: var(--veai-purple);
+    font-size: 13px; font-weight: 600; padding: 7px 16px; border-radius: 999px; margin-bottom: 22px;
+  }
+  .hero h1 { font-size: 46px; line-height: 1.1; margin-bottom: 18px; letter-spacing: -.5px; }
+  .hero h1 span { color: var(--veai-purple); }
+  .hero p { font-size: 18px; color: var(--veai-muted); max-width: 620px; margin: 0 auto 32px; }
+  .hero .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  /* Sections */
+  section { padding: 64px 0; }
+  .section-title { font-size: 30px; text-align: center; margin-bottom: 12px; letter-spacing: -.3px; }
+  .section-sub { text-align: center; color: var(--veai-muted); font-size: 16px; margin-bottom: 44px; }
+
+  /* Rewards */
+  .rewards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .reward {
+    background: var(--veai-card); border: 1px solid var(--veai-border);
+    border-radius: 20px; padding: 32px; position: relative; overflow: hidden;
+  }
+  .reward::before {
+    content: ""; position: absolute; top: -40px; right: -40px;
+    width: 140px; height: 140px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(123,91,255,.25), transparent 70%);
+  }
+  .reward .who { font-size: 13px; text-transform: uppercase; letter-spacing: .8px; color: var(--veai-muted); }
+  .reward .val { font-size: 40px; font-weight: 800; margin: 10px 0 6px; color: var(--veai-purple); }
+  .reward .desc { font-size: 15px; color: var(--veai-muted); }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .step {
+    background: var(--veai-card); border: 1px solid var(--veai-border);
+    border-radius: 18px; padding: 28px;
+  }
+  .step .n {
+    width: 40px; height: 40px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--veai-purple), var(--veai-purple-dark));
+    color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 18px; margin-bottom: 16px;
+  }
+  .step .t { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+  .step .d { font-size: 14px; color: var(--veai-muted); }
+
+  /* Anti-fraud strip */
+  .strip {
+    background: var(--veai-card-2); border: 1px solid var(--veai-border);
+    border-radius: 18px; padding: 28px 32px; display: flex; gap: 20px; align-items: center;
+  }
+  .strip .ic { font-size: 34px; }
+  .strip h3 { font-size: 18px; margin-bottom: 6px; }
+  .strip p { font-size: 14px; color: var(--veai-muted); }
+
+  /* CTA */
+  .cta-block {
+    text-align: center;
+    background: linear-gradient(135deg, rgba(123,91,255,.18), rgba(91,63,214,.08));
+    border: 1px solid var(--veai-border); border-radius: 24px; padding: 56px 32px;
+  }
+  .cta-block h2 { font-size: 32px; margin-bottom: 14px; }
+  .cta-block p { color: var(--veai-muted); font-size: 16px; margin-bottom: 28px; }
+
+  footer { border-top: 1px solid var(--veai-border); padding: 28px 0; color: var(--veai-muted); font-size: 13px; text-align: center; }
+
+  @media (max-width: 720px) {
+    .hero h1 { font-size: 34px; }
+    .rewards, .steps { grid-template-columns: 1fr; }
+    .strip { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><div class="logo">V</div><b>Veai</b></div>
+    <a href="#cta" class="btn">Пригласить друга</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">Реферальная программа</span>
+    <h1>Пригласи коллегу — <span>бонус получите оба</span></h1>
+    <p>Поделитесь Veai с другом. Когда он оформит первую подписку, вы получите минуты на баланс, а он — скидку 50% на первый месяц.</p>
+    <div class="cta-row">
+      <a href="#cta" class="btn">Получить реферальную ссылку</a>
+      <a href="#how" class="btn ghost">Как это работает</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Награда для обоих</h2>
+    <p class="section-sub">Win-win: выигрывает и тот, кто приглашает, и тот, кого пригласили.</p>
+    <div class="rewards">
+      <div class="reward">
+        <div class="who">Вам — рефереру</div>
+        <div class="val">+350 минут</div>
+        <div class="desc">На баланс после того, как друг оплатит первый месяц подписки.</div>
+      </div>
+      <div class="reward">
+        <div class="who">Другу — рефералу</div>
+        <div class="val">−50%</div>
+        <div class="desc">Скидка на первую подписку. Любой тариф, скидка действует на первый месяц.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2 class="section-title">Три шага</h2>
+    <p class="section-sub">От ссылки до бонуса.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <div class="t">Отправьте ссылку</div>
+        <div class="d">В разделе «Пригласить друга» возьмите свою реферальную ссылку и поделитесь с коллегой.</div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div class="t">Друг оформляет подписку</div>
+        <div class="d">Перешедший по ссылке получает скидку 50% на первую подписку — на любой тариф.</div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div class="t">Бонус приходит обоим</div>
+        <div class="d">После оплаты первого месяца вы получаете +350 минут на баланс.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="strip">
+      <div class="ic">🛡️</div>
+      <div>
+        <h3>Честная механика</h3>
+        <p>Бонус начисляется за первую оплаченную подписку, а не за регистрацию. Так программа защищена от накруток, а награды достаются за реальных пользователей.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="wrap">
+    <div class="cta-block">
+      <h2>Пригласите первого коллегу</h2>
+      <p>Откройте раздел «Пригласить друга» в Veai и поделитесь своей ссылкой.</p>
+      <a href="#" class="btn">Получить реферальную ссылку</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© Veai · Реферальная программа</div>
+</footer>
+
+</body>
+</html>
