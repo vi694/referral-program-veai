@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Реферальная и партнёрская программа · Veai</title>
+  <meta name="description" content="Три уровня вознаграждения Veai: пригласи друга, копи ачивки за приглашения, стань партнёром и получай до 50% с каждой лицензии.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* ===== Dimension design tokens (single source of truth) ===== */
+      /* Colors */
+      --color-void:#0a0a0a;
+      --color-char:#1d1d1d;
+      --color-iron:#3d3d3d;
+      --color-slate:#505050;
+      --color-smoke:#797979;
+      --color-graphite:#161616;
+      --color-ink:#282828;
+      --color-fog:#686868;
+      --color-mist:#c2c2c2;
+      --color-ash:#b2b2b2;
+      --color-bone:#e5e5e5;
+      --color-paper:#ffffff;
+      --color-onyx:#000000;
+      --color-indigo-haze:#6b62f2;
+      --gradient-indigo-haze:linear-gradient(90deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(107,98,242,0.565) 50%,rgba(0,0,0,0) 60%,rgba(0,0,0,0));
+      --color-dawn-wash:#9cafb8;
+      --gradient-dawn-wash:linear-gradient(180deg,rgb(72,103,175),rgb(156,175,184),rgb(196,149,119));
+
+      /* Typography */
+      --font-dm-sans:'DM Sans',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      --font-geist:'Geist',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      --font-system-ui:'system-ui',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+
+      /* Typography — Scale */
+      --text-caption:14px;     --leading-caption:1.5;       --tracking-caption:0.35px;
+      --text-body:16px;        --leading-body:1.5;
+      --text-body-lg:18px;     --leading-body-lg:1.43;
+      --text-subheading:24px;  --leading-subheading:1.33;
+      --text-heading-sm:32px;  --leading-heading-sm:1.25;
+      --text-heading:40px;     --leading-heading:1.2;
+      --text-heading-lg:48px;  --leading-heading-lg:1.14;
+      --text-display:72px;     --leading-display:1;         --tracking-display:-2.52px;
+
+      /* Typography — Weights */
+      --font-weight-regular:400;
+      --font-weight-medium:500;
+      --font-weight-semibold:600;
+      --font-weight-bold:700;
+
+      /* Spacing */
+      --spacing-unit:4px;
+      --spacing-4:4px;   --spacing-8:8px;   --spacing-12:12px; --spacing-16:16px;
+      --spacing-20:20px; --spacing-24:24px; --spacing-28:28px; --spacing-32:32px;
+      --spacing-40:40px; --spacing-44:44px; --spacing-48:48px; --spacing-56:56px; --spacing-64:64px;
+
+      /* Layout */
+      --page-max-width:1200px;
+      --section-gap:80px;
+      --card-padding:24px;
+      --element-gap:8px;
+
+      /* Border Radius */
+      --radius-md:4px;
+      --radius-lg:10px;
+      --radius-2xl:19px;
+      --radius-3xl:24px;
+      --radius-3xl-2:40px;
+      --radius-full:64px;
+      --radius-full-2:9999px;
+      --radius-pill:9999px;
+      --radius-tags:9999px;
+      --radius-cards:24px;
+      --radius-inputs:10px;
+      --radius-buttons:9999px;
+      --radius-iconcontainers:4px;
+      --radius-largecontainers:40px;
+
+      /* Surfaces */
+      --surface-void:#0a0a0a;
+      --surface-char:#1d1d1d;
+      --surface-iron:#3d3d3d;
+      --surface-slate:#505050;
+
+      /* ===== Local aliases mapped onto the tokens above ===== */
+      --void:var(--color-void);
+      --char:var(--color-char);
+      --iron:var(--color-iron);
+      --ink:var(--color-ink);
+      --fog:var(--color-fog);
+      --mist:var(--color-mist);
+      --ash:var(--color-ash);
+      --bone:var(--color-bone);
+      --paper:var(--color-paper);
+      --indigo:rgba(107,98,242,.565);
+
+      --font-dm:var(--font-dm-sans);
+
+      --hairline:rgba(229,229,229,.08);
+      --hairline-strong:rgba(229,229,229,.12);
+
+      --gradient-dawn:var(--gradient-dawn-wash);
+      --gradient-indigo-line:var(--gradient-indigo-haze);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--void);color:var(--bone);
+      font-family:var(--font-dm);font-size:16px;line-height:1.5;
+      font-feature-settings:"ss01" on,"cv11" on;
+      -webkit-font-smoothing:antialiased;
+      padding-bottom:120px;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+    .section{padding:80px 0}
+
+    /* ===== Typography steps (Dimension composite tokens) ===== */
+    .ty-sm{font-family:var(--font-dm-sans);font-size:14px;font-weight:500;line-height:1}
+    .ty-sm-2{font-family:var(--font-dm-sans);font-size:14px;font-weight:500;line-height:1.43}
+    .ty-sm-3{font-family:var(--font-dm-sans);font-size:14px;font-weight:400;line-height:1.43}
+    .ty-sm-4{font-family:var(--font-dm-sans);font-size:14px;font-weight:700;line-height:1.43}
+    .ty-sm-5{font-family:var(--font-geist);font-size:14px;font-weight:500;line-height:1.43}
+    .ty-sm-6{font-family:var(--font-geist);font-size:14px;font-weight:400;line-height:1.43}
+    .ty-sm-7{font-family:var(--font-geist);font-size:14px;font-weight:400;line-height:1.71}
+    .ty-sm-8{font-family:var(--font-geist);font-size:14px;font-weight:600;line-height:1.14}
+    .ty-base{font-family:var(--font-dm-sans);font-size:15px;font-weight:400;line-height:1.5}
+    .ty-base-2{font-family:var(--font-dm-sans);font-size:16px;font-weight:400;line-height:1.5}
+    .ty-base-3{font-family:var(--font-dm-sans);font-size:16px;font-weight:700;line-height:1.25}
+    .ty-base-4{font-family:var(--font-dm-sans);font-size:16px;font-weight:500;line-height:1.5}
+    .ty-base-5{font-family:var(--font-geist);font-size:16px;font-weight:400;line-height:1.5}
+    .ty-lg{font-family:var(--font-dm-sans);font-size:18px;font-weight:700;line-height:1.11}
+    .ty-lg-2{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5}
+    .ty-lg-3{font-family:var(--font-system-ui);font-size:18px;font-weight:500;line-height:1.5}
+    .ty-lg-4{font-family:var(--font-dm-sans);font-size:18px;font-weight:500;line-height:1.56}
+    .ty-2xl{font-family:var(--font-geist);font-size:24px;font-weight:500;line-height:1.33}
+    .ty-3xl{font-family:var(--font-geist);font-size:32px;font-weight:600;line-height:1.5}
+    .ty-4xl{font-family:var(--font-geist);font-size:36px;font-weight:500;line-height:1.11}
+    .ty-4xl-2{font-family:var(--font-dm-sans);font-size:40px;font-weight:500;line-height:1.2}
+    .ty-5xl{font-family:var(--font-geist);font-size:48px;font-weight:500;line-height:1}
+    .ty-5xl-2{font-family:var(--font-dm-sans);font-size:72px;font-weight:500;line-height:1}
+
+    /* Indigo hairline divider */
+    .divider{height:1px;background:var(--gradient-indigo-line);max-width:1200px;margin:0 auto;opacity:.9}
+
+    /* ---------- HERO ---------- */
+    .hero{position:relative;overflow:hidden;padding:120px 0 96px}
+    .hero::before{
+      content:"";position:absolute;inset:0;z-index:0;
+      background:var(--gradient-dawn);opacity:.32;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;z-index:0;
+      background:radial-gradient(60% 55% at 50% 30%,var(--indigo) 0%,rgba(255,255,255,0) 70%);
+      opacity:.7;
+    }
+    .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:42% 1fr;gap:56px;align-items:center}
+    .eyebrow{display:inline-block;font-size:13px;font-weight:500;letter-spacing:.4px;color:var(--mist);
+      background:rgba(29,29,29,.6);border:1px solid var(--hairline-strong);padding:7px 16px;border-radius:9999px;margin-bottom:28px;backdrop-filter:blur(12px)}
+    /* hero headline = step 5xl-2 (DM Sans 72/500/1) + display tracking */
+    h1{font-family:var(--font-dm-sans);font-size:72px;font-weight:500;line-height:1;letter-spacing:var(--tracking-display);color:var(--paper);margin-bottom:24px}
+    /* lede = step lg-4 (DM Sans 18/500/1.56) */
+    .lede{font-family:var(--font-dm-sans);font-size:18px;font-weight:500;line-height:1.56;color:var(--mist);max-width:520px;margin-bottom:32px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 22px;border-radius:9999px;font-family:var(--font-dm);font-size:15px;font-weight:500;cursor:pointer;transition:all .15s ease}
+    .btn-primary{background:var(--paper);color:var(--void)}
+    .btn-primary:hover{opacity:.9}
+    .btn-ghost{background:rgba(29,29,29,.5);color:var(--bone);border:1px solid var(--hairline-strong);backdrop-filter:blur(12px)}
+    .btn-ghost:hover{background:rgba(61,61,61,.6)}
+
+    /* Glass product mockup */
+    .glass{
+      background:rgba(29,29,29,.72);backdrop-filter:blur(24px);
+      border:1px solid var(--hairline);border-radius:24px;padding:24px;
+      box-shadow:0 24px 48px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .mock-label{font-family:var(--font-geist);font-size:14px;color:var(--mist);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+    .mock-dot{width:20px;height:20px;border-radius:9999px;background:var(--iron);display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--bone)}
+    .link-pill{display:flex;align-items:center;gap:12px;height:52px;padding:0 8px 0 18px;border-radius:9999px;background:var(--ink);border:1px solid var(--hairline);margin-bottom:16px}
+    .link-pill .url{flex:1;font-family:var(--font-geist);font-size:14px;color:var(--mist);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .link-pill .copy{height:36px;padding:0 16px;border-radius:9999px;background:var(--paper);color:var(--void);font-size:13px;font-weight:500;display:grid;place-items:center}
+    .mock-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .mock-stat{background:var(--ink);border:1px solid var(--hairline);border-radius:16px;padding:16px 14px}
+    .mock-stat .v{font-family:var(--font-geist);font-size:24px;font-weight:600;color:var(--paper)}
+    .mock-stat .k{font-size:13px;color:var(--fog);margin-top:2px}
+
+    /* ---------- SECTION HEADS ---------- */
+    .sec-head{margin-bottom:40px;max-width:760px}
+    .kicker{font-size:13px;font-weight:500;letter-spacing:.4px;color:var(--fog);text-transform:uppercase;margin-bottom:14px}
+    .kicker.lvl{display:inline-flex;align-items:center;gap:8px;color:var(--paper);font-weight:600;letter-spacing:1px;padding:8px 16px;border-radius:9999px;background:rgba(107,98,242,.16);border:1px solid rgba(107,98,242,.4)}
+    .kicker.lvl::before{content:"";width:7px;height:7px;border-radius:9999px;background:var(--color-indigo-haze)}
+    /* section title = step 4xl-2 (DM Sans 40/500/1.2) */
+    h2{font-family:var(--font-dm-sans);font-size:40px;font-weight:500;line-height:1.2;letter-spacing:-.5px;color:var(--bone);margin-bottom:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    /* section sub = step lg-4 (DM Sans 18/500/1.56) */
+    .sec-sub{font-family:var(--font-dm-sans);font-size:18px;font-weight:500;line-height:1.56;color:var(--mist)}
+    .status{font-family:var(--font-dm);font-size:13px;font-weight:500;letter-spacing:.2px;padding:6px 14px;border-radius:9999px;background:var(--char);border:1px solid var(--hairline-strong)}
+    .status.ready{color:var(--bone)}
+    .status.idea{color:var(--fog)}
+
+    /* ---------- TIER CARDS ---------- */
+    .tier-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    .tier-card{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:28px;display:flex;flex-direction:column;transition:border-color .15s ease}
+    .tier-card:hover{border-color:var(--hairline-strong)}
+    .tier-card .head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+    .tier-card .pct{font-family:var(--font-geist);font-size:48px;font-weight:600;letter-spacing:-1.5px;color:var(--paper);line-height:1}
+    .tier-tag{font-size:13px;font-weight:500;color:var(--mist);padding:6px 14px;border-radius:9999px;background:var(--ink);border:1px solid var(--hairline)}
+    /* card title = step lg-2 (Geist 18/500/1.5) */
+    .tier-card h3{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:14px}
+    .tier-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .tier-card li{font-size:15px;color:var(--mist);display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+    .tier-card li::before{content:"";flex:0 0 auto;width:6px;height:6px;border-radius:9999px;background:var(--ash);margin-top:8px}
+    .veai-side{margin-top:16px;padding-top:16px;border-top:1px solid var(--hairline);font-size:14px;color:var(--fog);line-height:1.5}
+    .veai-side b{color:var(--mist);font-weight:500}
+    .tiers-note{font-size:14px;color:var(--fog);margin-top:24px;text-align:center;letter-spacing:.35px}
+    .note-detail{margin-top:20px;background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:28px}
+    .note-detail .nd-head{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+    .note-detail .nd-star{flex:0 0 auto;width:28px;height:28px;border-radius:9999px;display:grid;place-items:center;background:rgba(107,98,242,.16);border:1px solid rgba(107,98,242,.4);color:var(--paper);font-size:14px}
+    .note-detail .nd-title{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone)}
+    .nd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .nd-item{background:var(--void);border:1px solid var(--hairline);border-radius:19px;padding:20px}
+    .nd-item .k{font-family:var(--font-geist);font-size:14px;font-weight:600;line-height:1.14;letter-spacing:.4px;text-transform:uppercase;color:var(--fog);margin-bottom:8px}
+    .nd-item p{font-size:15px;line-height:1.5;color:var(--mist)}
+    .nd-item p b{color:var(--bone);font-weight:500}
+    @media (max-width:900px){.nd-grid{grid-template-columns:1fr}}
+
+    /* ---------- REWARDS ---------- */
+    .rewards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .reward{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:32px;position:relative;overflow:hidden}
+    .reward::after{content:"";position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:9999px;background:radial-gradient(circle,var(--indigo),rgba(255,255,255,0) 70%);opacity:.4}
+    .reward .who{font-size:13px;font-weight:500;letter-spacing:.4px;text-transform:uppercase;color:var(--fog)}
+    .reward .val{font-family:var(--font-geist);font-size:48px;font-weight:600;letter-spacing:-1.5px;color:var(--paper);margin:10px 0 8px;line-height:1}
+    .reward .desc{font-size:16px;color:var(--mist);line-height:1.5}
+
+    /* ---------- STEPS (numbered list) ---------- */
+    .steps{display:flex;flex-direction:column;margin-top:24px;border:1px solid var(--hairline);border-radius:24px;overflow:hidden}
+    .step{display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:flex-start;padding:24px 28px;border-bottom:1px solid var(--hairline);background:var(--char)}
+    .step:last-child{border-bottom:none}
+    .step .n{font-family:var(--font-geist);font-size:14px;font-weight:500;color:var(--fog);padding-top:2px}
+    .step .t{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:6px}
+    .step .d{font-size:15px;color:var(--mist);line-height:1.5}
+
+    /* ---------- ACHIEVEMENTS ---------- */
+    .ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .ach{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:32px;text-align:center}
+    .ach .goal{font-family:var(--font-geist);font-size:48px;font-weight:600;letter-spacing:-1.5px;color:var(--paper);line-height:1}
+    .ach .goal small{font-family:var(--font-dm);font-size:15px;font-weight:400;color:var(--fog);display:block;margin-top:8px;letter-spacing:.2px}
+    .ach .prize{font-size:16px;color:var(--mist);margin-top:14px;padding-top:14px;border-top:1px solid var(--hairline)}
+    .ideas-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .idea{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:28px}
+    .idea .h{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:8px}
+    .idea p{font-size:15px;color:var(--mist);line-height:1.5}
+
+    /* ---------- PRINCIPLES ---------- */
+    .principles{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .principle{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:28px;display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start}
+    .principle .ord{font-family:var(--font-geist);font-size:14px;font-weight:500;color:var(--fog);padding-top:4px}
+    .principle h4{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:8px}
+    .principle p{font-size:15px;color:var(--mist);line-height:1.5}
+
+    /* ---------- FINAL CTA ---------- */
+    .final{position:relative;overflow:hidden;background:var(--char);border:1px solid var(--hairline);border-radius:40px;padding:64px 40px;text-align:center}
+    .final::after{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 50% 0%,var(--indigo),rgba(255,255,255,0) 70%);opacity:.5}
+    .final>*{position:relative;z-index:1}
+    .final h2{justify-content:center;color:var(--paper)}
+    .final p{color:var(--mist);font-size:18px;max-width:520px;margin:12px auto 28px}
+    .final .cta-row{justify-content:center}
+
+    /* ---------- FLOATING PILL NAV ---------- */
+    .dock{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:50;
+      display:flex;align-items:center;gap:8px;height:56px;padding:8px 8px 8px 20px;border-radius:9999px;
+      background:rgba(29,29,29,.8);backdrop-filter:blur(20px);border:1px solid var(--hairline-strong);
+      box-shadow:0 8px 32px rgba(0,0,0,.4);max-width:calc(100vw - 32px)}
+    .dock .brand{display:inline-flex;align-items:center;margin-right:8px}
+    .dock .brand img{height:22px;display:block}
+    .dock-links{display:flex;gap:4px}
+    .dock-links a{padding:8px 14px;border-radius:9999px;font-size:15px;font-weight:500;color:var(--bone);transition:background .15s ease}
+    .dock-links a:hover{background:var(--iron)}
+    .dock .btn{height:40px;padding:0 18px;font-size:14px}
+
+    /* ---------- FOOTER ---------- */
+    footer{border-top:1px solid var(--hairline);padding:56px 0 40px}
+    .foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start}
+    footer .brand img{height:26px;display:block;margin-bottom:16px}
+    .disc{max-width:640px;font-size:14px;line-height:1.6;color:var(--fog)}
+    .foot-links{display:flex;gap:8px;flex-wrap:wrap}
+    .foot-links a{padding:8px 16px;border-radius:9999px;border:1px solid var(--hairline-strong);font-size:14px;font-weight:500;color:var(--bone)}
+    .foot-links a:hover{background:var(--char)}
+
+    @media (max-width:900px){
+      h1{font-size:44px;letter-spacing:-1.5px}
+      h2{font-size:32px}
+      .hero{padding:88px 0 64px}
+      .hero .wrap{grid-template-columns:1fr;gap:40px}
+
+      .tier-grid,.rewards,.ach-grid,.ideas-grid,.principles{grid-template-columns:1fr}
+      .section{padding:56px 0}
+      .dock-links{display:none}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="eyebrow">Реферальная и партнёрская программа</span>
+        <h1>Делитесь Veai — зарабатывайте вместе</h1>
+        <p class="lede">Три уровня вознаграждения: приведите друга и получите бонус оба, копите ачивки за приглашения или станьте партнёром и получайте до 50% с каждой проданной лицензии.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#partner">Стать партнёром <span>→</span></a>
+          <a class="btn btn-ghost" href="#achievements">Смотреть ачивки</a>
+        </div>
+      </div>
+
+      <div class="glass">
+        <div class="mock-label"><span class="mock-dot">V</span> Пригласить друга</div>
+        <div class="link-pill">
+          <span class="url">veai.ru/r/anna-k-7f3a9</span>
+          <span class="copy">Копировать</span>
+        </div>
+        <div class="mock-stats">
+          <div class="mock-stat"><div class="v">12</div><div class="k">перешли</div></div>
+          <div class="mock-stat"><div class="v">5</div><div class="k">оплатили</div></div>
+          <div class="mock-stat"><div class="v">1 750</div><div class="k">минут</div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- LEVEL 1 · PARTNER -->
+  <section class="section" id="partner">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker lvl">Уровень 1</div>
+        <h2>Партнёрская / амбассадорская программа</h2>
+        <p class="sec-sub">Комиссия растёт вместе с зоной ответственности партнёра.</p>
+      </div>
+
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="head"><span class="pct">10%</span><span class="tier-tag">Лиды</span></div>
+          <h3>Только приводите клиента</h3>
+          <ul>
+            <li>Приводите клиента по своей ссылке или рекомендации</li>
+            <li>Дальше сделку ведёт Veai</li>
+          </ul>
+          <div class="veai-side"><b>На стороне Veai:</b> все юридические вопросы, договоры, обучение и сопровождение.</div>
+        </div>
+        <div class="tier-card">
+          <div class="head"><span class="pct">20%</span><span class="tier-tag">Лиды + договоры</span></div>
+          <h3>Приводите и оформляете</h3>
+          <ul>
+            <li>Приводите клиента</li>
+            <li>Оформление и проведение по всем договорам</li>
+          </ul>
+          <div class="veai-side"><b>На стороне Veai:</b> обучение клиента и сопровождение.</div>
+        </div>
+        <div class="tier-card">
+          <div class="head"><span class="pct">30%</span><span class="tier-tag">+ Обучение</span></div>
+          <h3>Берёте на себя онбординг</h3>
+          <ul>
+            <li>Приводите клиента и ведёте договоры</li>
+            <li>Обучение клиента и проведение на вашей стороне</li>
+          </ul>
+          <div class="veai-side"><b>На стороне Veai:</b> продукт и поддержка.</div>
+        </div>
+        <div class="tier-card">
+          <div class="head"><span class="pct">50%</span><span class="tier-tag">Полный цикл</span></div>
+          <h3>Всё на стороне партнёра / амбассадора</h3>
+          <ul>
+            <li>Лиды, договоры, юридическая часть</li>
+            <li>Обучение, проведение и сопровождение сделки</li>
+          </ul>
+          <div class="veai-side"><b>Максимальная комиссия</b> — партнёр ведёт весь цикл самостоятельно.</div>
+        </div>
+      </div>
+      <p class="tiers-note">* Комиссия считается от стоимости лицензии, а не от токенов (минут).</p>
+
+      <div class="note-detail">
+        <div class="nd-head">
+          <span class="nd-star">✱</span>
+          <span class="nd-title">Почему от лицензии, а не от токенов</span>
+        </div>
+        <div class="nd-grid">
+          <div class="nd-item">
+            <div class="k">База расчёта</div>
+            <p>Процент начисляется от <b>суммы оплаченной лицензии</b> или подписки. Сколько клиент потратил минут внутри продукта — на вознаграждение не влияет.</p>
+          </div>
+          <div class="nd-item">
+            <div class="k">Триггер выплаты</div>
+            <p>Комиссия фиксируется в момент <b>оплаты лицензии</b>. Регистрации, триалы и бесплатные минуты выплату не запускают.</p>
+          </div>
+          <div class="nd-item">
+            <div class="k">Предсказуемость</div>
+            <p>Сумма лицензии известна заранее, поэтому партнёр <b>точно знает свой доход</b> с каждой сделки ещё до её закрытия.</p>
+          </div>
+          <div class="nd-item">
+            <div class="k">Защита от фрода</div>
+            <p>Нельзя накрутить выплату искусственным расходом минут: <b>бонус даёт только реальная оплата</b> от клиента.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- LEVEL 2 · ACHIEVEMENTS -->
+  <section class="section" id="achievements">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker lvl">Уровень 2</div>
+        <h2>Ачивки за приглашения</h2>
+        <p class="sec-sub">Чем больше друзей оформили подписку, тем крупнее разовый бонус.</p>
+      </div>
+
+      <div class="ach-grid">
+        <div class="ach"><div class="goal">5<small>друзей</small></div><div class="prize">+500 минут</div></div>
+        <div class="ach"><div class="goal">10<small>друзей</small></div><div class="prize">+1000 минут</div></div>
+        <div class="ach"><div class="goal">25<small>друзей</small></div><div class="prize">+5000 минут</div></div>
+      </div>
+
+      <div class="ideas-grid">
+        <div class="idea"><div class="h">Минуты за отзывы</div><p>Бонус минутами за отзыв о Veai. Площадка уточняется — JetBrains Marketplace или другая.</p></div>
+        <div class="idea"><div class="h">Заявка в амбассадоры</div><p>Кнопка «Стать амбассадором» — оставляете заявку, с вами связывается отдел маркетинга.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRINCIPLES -->
+  <section class="section" id="principles">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Как это устроено честно</div>
+        <h2>Сквозные принципы</h2>
+      </div>
+      <div class="principles">
+        <div class="principle"><div class="ord">01</div><div><h4>Награда за оплату</h4><p>Триггер — первая оплаченная подписка или проданная лицензия. За регистрацию бонуса нет.</p></div></div>
+        <div class="principle"><div class="ord">02</div><div><h4>База — лицензия, не токены</h4><p>Минуты реферера и проценты партнёра привязаны к оплате лицензии, а не к израсходованным минутам.</p></div></div>
+        <div class="principle"><div class="ord">03</div><div><h4>Защита от фрода</h4><p>Раз награда идёт за оплату, пустые аккаунты и накрутка приглашений не приносят бонусов.</p></div></div>
+        <div class="principle"><div class="ord">04</div><div><h4>Награда растёт за вовлечение</h4><p>Больше приглашений — крупнее ачивка. Больше ответственности — выше процент партнёра.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="final">
+        <h2>Пригласите первого коллегу</h2>
+        <p>Откройте раздел «Пригласить друга» в Veai и поделитесь своей ссылкой.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#partner">Хочу стать партнёром <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap foot-grid">
+      <div>
+        <a class="brand" href="https://veai.ru" target="_blank"><img src="assets/veai-logo-2839.svg" alt="Veai"></a>
+        <p class="disc">
+      </div>
+      <div class="foot-links">
+        <a href="https://veai.ru" target="_blank">veai.ru</a>
+        <a href="https://t.me/Veaicode" target="_blank">Telegram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING PILL NAV -->
+  <nav class="dock">
+    <a class="brand" href="https://veai.ru" target="_blank"><img src="assets/veai-logo-2839.svg" alt="Veai"></a>
+    <div class="dock-links">
+      <a href="#partner">Партнёрам</a>
+      <a href="#achievements">Ачивки</a>
+      <a href="#principles">Принципы</a>
+    </div>
+    <a class="btn btn-primary" href="#partner">Стать партнёром <span>→</span></a>
+  </nav>
+
+</body>
+</html>
