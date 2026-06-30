@@ -35,8 +35,9 @@
     /* Nav */
     .nav{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.82);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid rgba(120,67,255,.12)}
     .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{font-size:22px;font-weight:800;letter-spacing:-.5px;color:var(--ink)}
-    .brand .star{color:var(--purple)}
+    .brand{display:inline-flex;align-items:center}
+    .brand img{height:30px;display:block}
+    footer .brand img{height:28px}
     .nav-links{display:flex;gap:8px;flex-wrap:wrap}
     .nav-links a{padding:8px 14px;border-radius:18px;font-size:13px;font-weight:700;color:var(--purple-deep);border:1px solid var(--line);background:var(--white)}
     .nav-links a:hover{background:var(--lilac)}
@@ -153,7 +154,7 @@
   <!-- NAV -->
   <nav class="nav">
     <div class="wrap nav-in">
-      <a class="brand" href="https://veai.ru" target="_blank"><span class="star">✦</span> Veai</a>
+      <a class="brand" href="https://veai.ru" target="_blank"><img src="assets/veai-logo.svg" alt="Veai"></a>
       <div class="nav-links">
         <a href="#partner">Партнёрам</a>
         <a href="#referral">Реферальная</a>
@@ -338,7 +339,7 @@
   <footer>
     <div class="wrap foot-grid">
       <div>
-        <div class="brand"><span class="star" style="color:var(--purple-soft)">✦</span> Veai</div>
+        <a class="brand" href="https://veai.ru" target="_blank" style="margin-bottom:10px"><img src="assets/veai-logo-white.svg" alt="Veai"></a>
         <p class="disc">Условия реферальной и партнёрской программы. Уровень 1 готов к запуску, уровни 2 и 3 — в планах. Размеры наград и комиссий могут измениться до официального запуска. Бонусы считаются от оплаченной лицензии/подписки, а не от токенов.</p>
       </div>
       <div class="foot-links">
