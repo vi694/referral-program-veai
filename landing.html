@@ -190,6 +190,8 @@
     /* ---------- SECTION HEADS ---------- */
     .sec-head{margin-bottom:40px;max-width:760px}
     .kicker{font-size:13px;font-weight:500;letter-spacing:.4px;color:var(--fog);text-transform:uppercase;margin-bottom:14px}
+    .kicker.lvl{display:inline-flex;align-items:center;gap:8px;color:var(--paper);font-weight:600;letter-spacing:1px;padding:8px 16px;border-radius:9999px;background:rgba(107,98,242,.16);border:1px solid rgba(107,98,242,.4)}
+    .kicker.lvl::before{content:"";width:7px;height:7px;border-radius:9999px;background:var(--color-indigo-haze)}
     /* section title = step 4xl-2 (DM Sans 40/500/1.2) */
     h2{font-family:var(--font-dm-sans);font-size:40px;font-weight:500;line-height:1.2;letter-spacing:-.5px;color:var(--bone);margin-bottom:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
     /* section sub = step lg-4 (DM Sans 18/500/1.56) */
@@ -325,7 +327,7 @@
   <section class="section" id="partner">
     <div class="wrap">
       <div class="sec-head">
-        <div class="kicker">Уровень 1</div>
+        <div class="kicker lvl">Уровень 1</div>
         <h2>Партнёрская / амбассадорская программа</h2>
         <p class="sec-sub">Комиссия растёт вместе с зоной ответственности партнёра.</p>
       </div>
@@ -378,7 +380,7 @@
   <section class="section" id="referral">
     <div class="wrap">
       <div class="sec-head">
-        <div class="kicker">Уровень 2</div>
+        <div class="kicker lvl">Уровень 2</div>
         <h2>Реферальная программа</h2>
         <p class="sec-sub">Пригласи коллегу — бонус получите оба после его первой подписки.</p>
       </div>
@@ -419,7 +421,7 @@
   <section class="section" id="achievements">
     <div class="wrap">
       <div class="sec-head">
-        <div class="kicker">Уровень 3</div>
+        <div class="kicker lvl">Уровень 3</div>
         <h2>Ачивки за приглашения</h2>
         <p class="sec-sub">Чем больше друзей оформили подписку, тем крупнее разовый бонус.</p>
       </div>
