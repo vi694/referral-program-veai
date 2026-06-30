@@ -215,6 +215,16 @@
     .veai-side{margin-top:16px;padding-top:16px;border-top:1px solid var(--hairline);font-size:14px;color:var(--fog);line-height:1.5}
     .veai-side b{color:var(--mist);font-weight:500}
     .tiers-note{font-size:14px;color:var(--fog);margin-top:24px;text-align:center;letter-spacing:.35px}
+    .note-detail{margin-top:20px;background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:28px}
+    .note-detail .nd-head{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+    .note-detail .nd-star{flex:0 0 auto;width:28px;height:28px;border-radius:9999px;display:grid;place-items:center;background:rgba(107,98,242,.16);border:1px solid rgba(107,98,242,.4);color:var(--paper);font-size:14px}
+    .note-detail .nd-title{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone)}
+    .nd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .nd-item{background:var(--void);border:1px solid var(--hairline);border-radius:19px;padding:20px}
+    .nd-item .k{font-family:var(--font-geist);font-size:14px;font-weight:600;line-height:1.14;letter-spacing:.4px;text-transform:uppercase;color:var(--fog);margin-bottom:8px}
+    .nd-item p{font-size:15px;line-height:1.5;color:var(--mist)}
+    .nd-item p b{color:var(--bone);font-weight:500}
+    @media (max-width:900px){.nd-grid{grid-template-columns:1fr}}
 
     /* ---------- REWARDS ---------- */
     .rewards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -370,7 +380,32 @@
           <div class="veai-side"><b>Максимальная комиссия</b> — партнёр ведёт весь цикл самостоятельно.</div>
         </div>
       </div>
-      <p class="tiers-note">Комиссия считается от стоимости лицензии, а не от токенов (минут).</p>
+      <p class="tiers-note">* Комиссия считается от стоимости лицензии, а не от токенов (минут).</p>
+
+      <div class="note-detail">
+        <div class="nd-head">
+          <span class="nd-star">✱</span>
+          <span class="nd-title">Почему от лицензии, а не от токенов</span>
+        </div>
+        <div class="nd-grid">
+          <div class="nd-item">
+            <div class="k">База расчёта</div>
+            <p>Процент начисляется от <b>суммы оплаченной лицензии</b> или подписки. Сколько клиент потратил минут внутри продукта — на вознаграждение не влияет.</p>
+          </div>
+          <div class="nd-item">
+            <div class="k">Триггер выплаты</div>
+            <p>Комиссия фиксируется в момент <b>оплаты лицензии</b>. Регистрации, триалы и бесплатные минуты выплату не запускают.</p>
+          </div>
+          <div class="nd-item">
+            <div class="k">Предсказуемость</div>
+            <p>Сумма лицензии известна заранее, поэтому партнёр <b>точно знает свой доход</b> с каждой сделки ещё до её закрытия.</p>
+          </div>
+          <div class="nd-item">
+            <div class="k">Защита от фрода</div>
+            <p>Нельзя накрутить выплату искусственным расходом минут: <b>бонус даёт только реальная оплата</b> от клиента.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
