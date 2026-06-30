@@ -118,6 +118,31 @@
     .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
     .section{padding:80px 0}
 
+    /* ===== Typography steps (Dimension composite tokens) ===== */
+    .ty-sm{font-family:var(--font-dm-sans);font-size:14px;font-weight:500;line-height:1}
+    .ty-sm-2{font-family:var(--font-dm-sans);font-size:14px;font-weight:500;line-height:1.43}
+    .ty-sm-3{font-family:var(--font-dm-sans);font-size:14px;font-weight:400;line-height:1.43}
+    .ty-sm-4{font-family:var(--font-dm-sans);font-size:14px;font-weight:700;line-height:1.43}
+    .ty-sm-5{font-family:var(--font-geist);font-size:14px;font-weight:500;line-height:1.43}
+    .ty-sm-6{font-family:var(--font-geist);font-size:14px;font-weight:400;line-height:1.43}
+    .ty-sm-7{font-family:var(--font-geist);font-size:14px;font-weight:400;line-height:1.71}
+    .ty-sm-8{font-family:var(--font-geist);font-size:14px;font-weight:600;line-height:1.14}
+    .ty-base{font-family:var(--font-dm-sans);font-size:15px;font-weight:400;line-height:1.5}
+    .ty-base-2{font-family:var(--font-dm-sans);font-size:16px;font-weight:400;line-height:1.5}
+    .ty-base-3{font-family:var(--font-dm-sans);font-size:16px;font-weight:700;line-height:1.25}
+    .ty-base-4{font-family:var(--font-dm-sans);font-size:16px;font-weight:500;line-height:1.5}
+    .ty-base-5{font-family:var(--font-geist);font-size:16px;font-weight:400;line-height:1.5}
+    .ty-lg{font-family:var(--font-dm-sans);font-size:18px;font-weight:700;line-height:1.11}
+    .ty-lg-2{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5}
+    .ty-lg-3{font-family:var(--font-system-ui);font-size:18px;font-weight:500;line-height:1.5}
+    .ty-lg-4{font-family:var(--font-dm-sans);font-size:18px;font-weight:500;line-height:1.56}
+    .ty-2xl{font-family:var(--font-geist);font-size:24px;font-weight:500;line-height:1.33}
+    .ty-3xl{font-family:var(--font-geist);font-size:32px;font-weight:600;line-height:1.5}
+    .ty-4xl{font-family:var(--font-geist);font-size:36px;font-weight:500;line-height:1.11}
+    .ty-4xl-2{font-family:var(--font-dm-sans);font-size:40px;font-weight:500;line-height:1.2}
+    .ty-5xl{font-family:var(--font-geist);font-size:48px;font-weight:500;line-height:1}
+    .ty-5xl-2{font-family:var(--font-dm-sans);font-size:72px;font-weight:500;line-height:1}
+
     /* Indigo hairline divider */
     .divider{height:1px;background:var(--gradient-indigo-line);max-width:1200px;margin:0 auto;opacity:.9}
 
@@ -135,8 +160,10 @@
     .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:42% 1fr;gap:56px;align-items:center}
     .eyebrow{display:inline-block;font-size:13px;font-weight:500;letter-spacing:.4px;color:var(--mist);
       background:rgba(29,29,29,.6);border:1px solid var(--hairline-strong);padding:7px 16px;border-radius:9999px;margin-bottom:28px;backdrop-filter:blur(12px)}
-    h1{font-family:var(--font-dm);font-size:72px;line-height:1;letter-spacing:-2.5px;font-weight:400;color:var(--paper);margin-bottom:24px}
-    .lede{font-size:18px;line-height:1.5;color:var(--mist);max-width:520px;margin-bottom:32px}
+    /* hero headline = step 5xl-2 (DM Sans 72/500/1) + display tracking */
+    h1{font-family:var(--font-dm-sans);font-size:72px;font-weight:500;line-height:1;letter-spacing:var(--tracking-display);color:var(--paper);margin-bottom:24px}
+    /* lede = step lg-4 (DM Sans 18/500/1.56) */
+    .lede{font-family:var(--font-dm-sans);font-size:18px;font-weight:500;line-height:1.56;color:var(--mist);max-width:520px;margin-bottom:32px}
     .cta-row{display:flex;flex-wrap:wrap;gap:12px}
     .btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 22px;border-radius:9999px;font-family:var(--font-dm);font-size:15px;font-weight:500;cursor:pointer;transition:all .15s ease}
     .btn-primary{background:var(--paper);color:var(--void)}
@@ -169,8 +196,10 @@
     /* ---------- SECTION HEADS ---------- */
     .sec-head{margin-bottom:40px;max-width:760px}
     .kicker{font-size:13px;font-weight:500;letter-spacing:.4px;color:var(--fog);text-transform:uppercase;margin-bottom:14px}
-    h2{font-family:var(--font-geist);font-size:40px;line-height:1.2;letter-spacing:-.5px;font-weight:500;color:var(--bone);margin-bottom:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-    .sec-sub{color:var(--mist);font-size:18px;line-height:1.5}
+    /* section title = step 4xl-2 (DM Sans 40/500/1.2) */
+    h2{font-family:var(--font-dm-sans);font-size:40px;font-weight:500;line-height:1.2;letter-spacing:-.5px;color:var(--bone);margin-bottom:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    /* section sub = step lg-4 (DM Sans 18/500/1.56) */
+    .sec-sub{font-family:var(--font-dm-sans);font-size:18px;font-weight:500;line-height:1.56;color:var(--mist)}
     .status{font-family:var(--font-dm);font-size:13px;font-weight:500;letter-spacing:.2px;padding:6px 14px;border-radius:9999px;background:var(--char);border:1px solid var(--hairline-strong)}
     .status.ready{color:var(--bone)}
     .status.idea{color:var(--fog)}
@@ -182,7 +211,8 @@
     .tier-card .head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
     .tier-card .pct{font-family:var(--font-geist);font-size:48px;font-weight:600;letter-spacing:-1.5px;color:var(--paper);line-height:1}
     .tier-tag{font-size:13px;font-weight:500;color:var(--mist);padding:6px 14px;border-radius:9999px;background:var(--ink);border:1px solid var(--hairline)}
-    .tier-card h3{font-family:var(--font-geist);font-size:18px;font-weight:500;color:var(--bone);margin-bottom:14px;line-height:1.33}
+    /* card title = step lg-2 (Geist 18/500/1.5) */
+    .tier-card h3{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:14px}
     .tier-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
     .tier-card li{font-size:15px;color:var(--mist);display:flex;gap:10px;align-items:flex-start;line-height:1.45}
     .tier-card li::before{content:"";flex:0 0 auto;width:6px;height:6px;border-radius:9999px;background:var(--ash);margin-top:8px}
@@ -203,7 +233,7 @@
     .step{display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:flex-start;padding:24px 28px;border-bottom:1px solid var(--hairline);background:var(--char)}
     .step:last-child{border-bottom:none}
     .step .n{font-family:var(--font-geist);font-size:14px;font-weight:500;color:var(--fog);padding-top:2px}
-    .step .t{font-family:var(--font-geist);font-size:18px;font-weight:500;color:var(--bone);margin-bottom:6px}
+    .step .t{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:6px}
     .step .d{font-size:15px;color:var(--mist);line-height:1.5}
 
     /* ---------- ACHIEVEMENTS ---------- */
@@ -214,14 +244,14 @@
     .ach .prize{font-size:16px;color:var(--mist);margin-top:14px;padding-top:14px;border-top:1px solid var(--hairline)}
     .ideas-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
     .idea{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:28px}
-    .idea .h{font-family:var(--font-geist);font-size:18px;font-weight:500;color:var(--bone);margin-bottom:8px}
+    .idea .h{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:8px}
     .idea p{font-size:15px;color:var(--mist);line-height:1.5}
 
     /* ---------- PRINCIPLES ---------- */
     .principles{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
     .principle{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:28px;display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start}
     .principle .ord{font-family:var(--font-geist);font-size:14px;font-weight:500;color:var(--fog);padding-top:4px}
-    .principle h4{font-family:var(--font-geist);font-size:18px;font-weight:500;color:var(--bone);margin-bottom:8px}
+    .principle h4{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:8px}
     .principle p{font-size:15px;color:var(--mist);line-height:1.5}
 
     /* ---------- FINAL CTA ---------- */
