@@ -226,6 +226,16 @@
     .nd-item p b{color:var(--bone);font-weight:500}
     @media (max-width:900px){.nd-grid{grid-template-columns:1fr}}
 
+    /* ---------- COMPETITORS ---------- */
+    .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .comp-card{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:26px;display:flex;flex-direction:column}
+    .comp-tag{align-self:flex-start;font-size:13px;font-weight:500;color:var(--mist);padding:6px 14px;border-radius:9999px;background:var(--ink);border:1px solid var(--hairline);margin-bottom:16px}
+    .comp-card h3{font-family:var(--font-geist);font-size:18px;font-weight:500;line-height:1.5;color:var(--bone);margin-bottom:14px}
+    .comp-card ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .comp-card li{font-size:14px;color:var(--mist);line-height:1.45}
+    .comp-card li b{color:var(--bone);font-weight:500;display:block;font-size:12px;text-transform:uppercase;letter-spacing:.4px;color:var(--fog);margin-bottom:2px}
+    @media (max-width:900px){.comp-grid{grid-template-columns:1fr}}
+
     /* ---------- INVITE LADDER ---------- */
     .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
     .rung{background:var(--char);border:1px solid var(--hairline);border-radius:24px;padding:22px;position:relative}
@@ -506,6 +516,48 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
+  <!-- COMPETITORS -->
+  <section class="section" id="competitors">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Как у конкурентов</div>
+        <h2>Три модели на рынке</h2>
+        <p class="sec-sub">Как реферальные программы устроены у Cursor и Claude.</p>
+      </div>
+      <div class="comp-grid">
+        <div class="comp-card">
+          <span class="comp-tag">Постоянная скидка + кредиты</span>
+          <h3>Cursor</h3>
+          <ul>
+            <li><b>Другу</b>50% скидка на первый платёж</li>
+            <li><b>Рефереру</b>On-demand кредиты</li>
+            <li><b>Условие</b>Первая оплата друга</li>
+          </ul>
+        </div>
+        <div class="comp-card">
+          <span class="comp-tag">Конкурс-розыгрыш</span>
+          <h3>Claude 4 Invite Contest</h3>
+          <ul>
+            <li><b>Другу</b>Триал Claude 4</li>
+            <li><b>Рефереру</b>Шанс выиграть 4 мес Max (~$400)</li>
+            <li><b>Условие</b>Регистрация + 1 сообщение</li>
+          </ul>
+        </div>
+        <div class="comp-card">
+          <span class="comp-tag">Гостевые пропуска (реферал)</span>
+          <h3>Claude Code <code>/passes</code></h3>
+          <ul>
+            <li><b>Другу</b>7 дней Pro бесплатно</li>
+            <li><b>Рефереру</b>$10 за конверсию (до $30)</li>
+            <li><b>Условие</b>Конверсия в платный Pro</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FINAL CTA -->
   <section class="section">
     <div class="wrap">
@@ -540,6 +592,7 @@
       <a href="#invite">Veai-друг</a>
       <a href="#partner">Veai-партнёр</a>
       <a href="#achievements">Veai-чемпион</a>
+      <a href="#competitors">Конкуренты</a>
       <a href="#principles">Принципы</a>
     </div>
     <a class="btn btn-primary" href="#partner">Стать партнёром <span>→</span></a>
